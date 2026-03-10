@@ -1,9 +1,7 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Alver</title>
 
 <style>
@@ -11,13 +9,12 @@
 body{
 margin:0;
 font-family:Segoe UI, sans-serif;
-min-height:100vh;
-overflow-x:hidden;
+height:100vh;
+overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
 background:linear-gradient(135deg,#b3d9ff,#e6f2ff);
-padding:20px;
 }
 
 /* floating background */
@@ -70,9 +67,8 @@ transition:opacity 2s;
 /* envelope */
 
 .envelope{
-width:90%;
-max-width:340px;
-height:200px;
+width:340px;
+height:220px;
 background:#4da6ff;
 border-radius:8px;
 position:relative;
@@ -93,10 +89,9 @@ transition:.6s;
 .letter{
 position:absolute;
 background:white;
-width:90%;
-max-width:300px;
-max-height:70vh;
-left:5%;
+width:300px;
+height:280px;
+left:20px;
 top:20px;
 padding:20px;
 border-radius:10px;
@@ -128,18 +123,20 @@ line-height:1.6;
 color:#333;
 }
 
+/* buttons */
+
 #nextBtn{
 display:none;
 position:absolute;
-bottom:-60px;
+bottom:-80px;
 left:50%;
 transform:translateX(-50%);
-padding:12px 24px;
+padding:12px 28px;
 background:#1a75ff;
 border:none;
 border-radius:25px;
 color:white;
-font-size:15px;
+font-size:16px;
 cursor:pointer;
 }
 
@@ -148,19 +145,18 @@ cursor:pointer;
 #videoPage{
 display:none;
 text-align:center;
-width:100%;
 }
 
 video{
-width:95%;
-max-width:700px;
+width:700px;
+max-width:90%;
 border-radius:15px;
 box-shadow:0 10px 25px rgba(0,0,0,0.4);
 margin-top:20px;
 }
 
 .dunkTitle{
-font-size:36px;
+font-size:40px;
 font-weight:bold;
 color:#1a75ff;
 margin-top:20px;
@@ -176,8 +172,6 @@ color:white;
 font-size:16px;
 cursor:pointer;
 }
-
-/* cake */
 
 .cake{
 font-size:60px;
@@ -222,33 +216,6 @@ transform:translateY(100vh) rotate(360deg);
 }
 }
 
-/* mobile adjustments */
-
-@media (max-width:600px){
-
-h2{
-font-size:22px;
-}
-
-p{
-font-size:13px;
-}
-
-.dunkTitle{
-font-size:26px;
-}
-
-.cake{
-font-size:45px;
-}
-
-.bg img{
-width:90px;
-height:90px;
-}
-
-}
-
 </style>
 </head>
 
@@ -265,16 +232,18 @@ height:90px;
 <img src="alver2.jpeg">
 <img src="alver3.jpeg">
 <img src="alver4.jpeg">
+<img src="alver5.jpeg">
 <img src="alver6.jpeg">
 </div>
 
-<!-- floating photos -->
+<!-- floating background -->
 
 <div class="bg">
 <img src="alver1.jpeg" style="top:10%;left:5%">
 <img src="alver2.jpeg" style="top:60%;left:10%">
 <img src="alver3.jpeg" style="top:20%;left:80%">
 <img src="alver4.jpeg" style="top:70%;left:75%">
+<img src="alver5.jpeg" style="top:40%;left:50%">
 <img src="alver6.jpeg" style="top:15%;left:40%">
 </div>
 
@@ -292,7 +261,7 @@ height:90px;
 
 Happy Birthday, cutie Alver! 🎉🎂  
 
-You’re honestly one of the sweetest people ever so kind, so nice, and always full of passion, especially when it comes to gaming and anime.  
+You’re honestly one of the sweetest people ever — so kind, so nice, and always full of passion, especially when it comes to gaming and anime.  
 
 And just so you know… one day I will dunk you 😌🏀 in a friendly way… or maybe not so friendly.  
 
@@ -318,7 +287,6 @@ Lots of love on your special day 💙
 <div class="cake">🎂</div>
 
 <div class="dunkTitle">🏀 THE DUNK MOMENT 😌</div>
-<div class="dunkTitle">Warning: future dunk victim.</div>
 
 <video id="dunkVideo" controls onended="confettiRain()">
 <source src="dunk.mp4" type="video/mp4">
@@ -331,6 +299,8 @@ Lots of love on your special day 💙
 </div>
 
 <script>
+
+/* envelope open */
 
 function openEnvelope(){
 
@@ -349,6 +319,8 @@ document.getElementById("nextBtn").style.display="block"
 
 }
 
+/* show video */
+
 function showVideo(){
 
 document.getElementById("envelope").style.display="none"
@@ -357,6 +329,8 @@ document.getElementById("videoPage").style.display="block"
 document.getElementById("bgMusic").pause()
 
 }
+
+/* back button */
 
 function goBack(){
 
@@ -374,6 +348,8 @@ music.play()
 startSlideshow()
 
 }
+
+/* fireworks */
 
 function startFireworks(){
 
@@ -394,6 +370,8 @@ setTimeout(()=>f.remove(),1000)
 
 }
 
+/* confetti */
+
 function confettiRain(){
 
 for(let i=0;i<100;i++){
@@ -411,6 +389,8 @@ setTimeout(()=>c.remove(),3000)
 }
 
 }
+
+/* slideshow */
 
 function startSlideshow(){
 
@@ -435,4 +415,3 @@ index=(index+1)%slides.length
 
 </body>
 </html>
-```
