@@ -1,7 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Alver</title>
 
 <style>
@@ -9,15 +11,16 @@
 body{
 margin:0;
 font-family:Segoe UI, sans-serif;
-height:100vh;
-overflow:hidden;
+min-height:100vh;
+overflow-x:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
 background:linear-gradient(135deg,#b3d9ff,#e6f2ff);
+padding:20px;
 }
 
-
+/* floating background */
 
 .bg{
 position:fixed;
@@ -43,7 +46,7 @@ from{transform:translateY(0)}
 to{transform:translateY(-60px)}
 }
 
-
+/* slideshow */
 
 #slideshow{
 position:fixed;
@@ -64,11 +67,12 @@ opacity:0;
 transition:opacity 2s;
 }
 
-
+/* envelope */
 
 .envelope{
-width:340px;
-height:220px;
+width:90%;
+max-width:340px;
+height:200px;
 background:#4da6ff;
 border-radius:8px;
 position:relative;
@@ -89,9 +93,10 @@ transition:.6s;
 .letter{
 position:absolute;
 background:white;
-width:300px;
-height:280px;
-left:20px;
+width:90%;
+max-width:300px;
+max-height:70vh;
+left:5%;
 top:20px;
 padding:20px;
 border-radius:10px;
@@ -123,40 +128,39 @@ line-height:1.6;
 color:#333;
 }
 
-
-
 #nextBtn{
 display:none;
 position:absolute;
-bottom:-80px;
+bottom:-60px;
 left:50%;
 transform:translateX(-50%);
-padding:12px 28px;
+padding:12px 24px;
 background:#1a75ff;
 border:none;
 border-radius:25px;
 color:white;
-font-size:16px;
+font-size:15px;
 cursor:pointer;
 }
 
-
+/* video page */
 
 #videoPage{
 display:none;
 text-align:center;
+width:100%;
 }
 
 video{
-width:700px;
-max-width:90%;
+width:95%;
+max-width:700px;
 border-radius:15px;
 box-shadow:0 10px 25px rgba(0,0,0,0.4);
 margin-top:20px;
 }
 
 .dunkTitle{
-font-size:40px;
+font-size:36px;
 font-weight:bold;
 color:#1a75ff;
 margin-top:20px;
@@ -173,6 +177,8 @@ font-size:16px;
 cursor:pointer;
 }
 
+/* cake */
+
 .cake{
 font-size:60px;
 animation:bounce 1.5s infinite;
@@ -184,7 +190,7 @@ animation:bounce 1.5s infinite;
 100%{transform:translateY(0)}
 }
 
-
+/* fireworks */
 
 .firework{
 position:fixed;
@@ -199,7 +205,7 @@ animation:explode 1s ease-out forwards;
 100%{transform:scale(15);opacity:0}
 }
 
-
+/* confetti */
 
 .confetti{
 position:fixed;
@@ -214,6 +220,33 @@ animation:fall 3s linear forwards;
 to{
 transform:translateY(100vh) rotate(360deg);
 }
+}
+
+/* mobile adjustments */
+
+@media (max-width:600px){
+
+h2{
+font-size:22px;
+}
+
+p{
+font-size:13px;
+}
+
+.dunkTitle{
+font-size:26px;
+}
+
+.cake{
+font-size:45px;
+}
+
+.bg img{
+width:90px;
+height:90px;
+}
+
 }
 
 </style>
@@ -235,7 +268,7 @@ transform:translateY(100vh) rotate(360deg);
 <img src="alver6.jpeg">
 </div>
 
-<!-- floating background -->
+<!-- floating photos -->
 
 <div class="bg">
 <img src="alver1.jpeg" style="top:10%;left:5%">
@@ -245,7 +278,7 @@ transform:translateY(100vh) rotate(360deg);
 <img src="alver6.jpeg" style="top:15%;left:40%">
 </div>
 
-
+<!-- envelope -->
 
 <div id="envelope" class="envelope" onclick="openEnvelope()">
 
@@ -278,7 +311,7 @@ Lots of love on your special day 💙
 
 </div>
 
-
+<!-- video page -->
 
 <div id="videoPage">
 
@@ -299,7 +332,6 @@ Lots of love on your special day 💙
 
 <script>
 
-
 function openEnvelope(){
 
 let env=document.getElementById("envelope")
@@ -317,8 +349,6 @@ document.getElementById("nextBtn").style.display="block"
 
 }
 
-
-
 function showVideo(){
 
 document.getElementById("envelope").style.display="none"
@@ -327,8 +357,6 @@ document.getElementById("videoPage").style.display="block"
 document.getElementById("bgMusic").pause()
 
 }
-
-
 
 function goBack(){
 
@@ -346,8 +374,6 @@ music.play()
 startSlideshow()
 
 }
-
-
 
 function startFireworks(){
 
@@ -368,8 +394,6 @@ setTimeout(()=>f.remove(),1000)
 
 }
 
-
-
 function confettiRain(){
 
 for(let i=0;i<100;i++){
@@ -387,8 +411,6 @@ setTimeout(()=>c.remove(),3000)
 }
 
 }
-
-
 
 function startSlideshow(){
 
@@ -413,3 +435,4 @@ index=(index+1)%slides.length
 
 </body>
 </html>
+```
